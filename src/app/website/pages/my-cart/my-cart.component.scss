@@ -1,0 +1,31 @@
+@import '../../../../styles/_global.scss';
+.cart-list{
+  padding: 5px;
+  app-item-cart {
+    display: grid;
+    grid-template-columns: 1fr repeat(4,3fr);
+    place-items: center;  }
+
+    .cabecera {
+      ul {
+        @extend app-item-cart;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    }
+    .total {
+      margin-top: 10px;
+      border-top: 1px solid $background-button;
+      padding: 10px;
+      display: flex;
+      justify-content: end;
+      h3 {
+        font-weight: bold;
+      }
+      p{
+        width: 100px;
+        text-align: end;
+        margin-right: 10px;
+      }
+    }
+}

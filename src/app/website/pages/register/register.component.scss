@@ -1,0 +1,17 @@
+@import './../login/login.component.scss';
+
+form {
+  height: 550px;
+
+  select {
+    border: none;
+    font-size: 1.1rem;
+    color: $background-button;
+    padding: 8px 3px;
+    border-radius: 5px;
+    &:focus-visible {
+      border: 1px solid $color-text-secundary;
+      outline: none;
+    }
+  }
+}

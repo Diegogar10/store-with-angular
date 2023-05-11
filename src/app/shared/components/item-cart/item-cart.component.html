@@ -1,0 +1,15 @@
+<p>{{ product.id }}</p>
+<div class="detail-product">
+  <img [src]="product.image" [alt]="product.title">
+  <h2>{{ product.title}} </h2>
+</div>
+<div class="qty-product">
+  <div>
+    <button *ngIf="product.qty>1" (click)="decrementItem()">-</button>
+    <p>{{product.qty}}</p>
+    <button (click)="incrementItem()">+</button>
+  </div>
+  <button *ngIf="product.qty>0"(click)="deleteItem()"><img src="../../../../assets/svg/delete_icon.svg"></button>
+</div>
+<h3>{{product.price | currency:'COP':'symbol-narrow':'1.1-1'}}</h3>
+<h3>{{product.price*product.qty | currency:'COP':'symbol-narrow':'1.1-1'}}</h3>

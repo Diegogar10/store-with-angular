@@ -1,0 +1,64 @@
+<div class="show-mobile">
+  <div>
+    <button (click)="toggleMenu()">
+      <img src="./assets/svg/icon_menu.svg" alt="menu">
+    </button>
+    <a routerLink="/home">
+      <img class="logo" src="./assets/png/logo_store.png" alt="logo">
+    </a>
+    <div class="cart">
+      <a routerLink="/my-cart">
+        <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+      </a>
+      <span class="counter">{{ counter }}</span>
+    </div>
+  </div>
+  <div class="side-menu" [class.active]="activeMenu">
+    <div class="button-close">
+      <button (click)="toggleMenu()">X</button>
+    </div>
+    <ul>
+      <li><a (click)="toggleMenu()" routerLinkActive="active" routerLink="home">All</a></li>
+      <li *ngFor="let item of categories">
+        <a (click)="toggleMenu()" routerLinkActive="active" [routerLink]="['/category',item.id]">{{ item.name }}</a>
+      </li>
+    </ul>
+    <div>
+      <button *ngIf="email.length == 0; else elseBlock2" routerLink="/login" (click)="toggleMenu()">Login</button>
+      <ng-template #elseBlock2>
+        <button (click)="logout()">Logout</button>
+      </ng-template>
+    </div>
+  </div>
+</div>
+<div class="hide-mobile">
+  <div>
+    <nav>
+      <a class="logo" href="">
+        <img src="./assets/png/logo_store.png" alt="logo">
+      </a>
+      <ul>
+        <li><a routerLinkActive="active" routerLink="home">All</a></li>
+        <li *ngFor="let item of categories">
+          <a routerLinkActive="active" [routerLink]="['/category',item.id]">{{ item.name }}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="info">
+      <div class="account">
+        <!-- <button *ngIf="email.length == 0; else elseBlock" (click)="login()"> Login </button> -->
+        <button *ngIf="email.length == 0; else elseBlock" routerLink="/login"> Login </button>
+        <ng-template #elseBlock>
+          <a routerLink="/profile">{{email}}</a>
+          <button (click)="logout()">Logout</button>
+        </ng-template>
+      </div>
+        <div>
+          <a routerLink="/my-cart">
+            <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+          </a>
+          <span class="counter">{{ counter }}</span>
+        </div>
+    </div>
+  </div>
+</div>

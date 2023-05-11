@@ -1,0 +1,33 @@
+$background-light-transparent: #f9f1fceb;
+$background-light: #f9f1fc;
+$background-button: #2d2768;
+$color-text-secundary:#ACD9B2;
+$advertency-red: #ff6c6c;
+
+styleButton {
+  font-size: 1.4em;
+  padding: 5px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1.4px solid $background-button;
+  color: $background-button;
+}
+
+buttonClose{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  justify-content: flex-end;
+  button {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $background-light;
+    background-color: $background-button;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,56 @@
+@import '../../../../styles/_global.scss';
+
+.page-product {
+  padding: 0 3em;
+  position: relative;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $background-button;
+    font-weight: bold;
+    font-size: 1.8em;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 5px;
+    top: 0px;
+    border-radius: 50%;
+  }
+  .detail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    .gallery {
+      overflow: hidden;
+      width: 100%;
+    }
+    h2, h1 {
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 2em;
+    }
+    h2 {
+      font-size: 1.5em;
+    }
+  }
+}
+@media screen and (max-width:40em) {
+  .page-product {
+    padding: 0 1.5em;
+    button{
+      top: -20px;
+    }
+    .detail {
+      display: flex;
+      flex-direction: column;
+      .gallery{
+        img{
+          margin-top: 10px;
+          border-radius: 15px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

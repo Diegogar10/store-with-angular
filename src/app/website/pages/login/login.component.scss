@@ -1,0 +1,60 @@
+@import '../../../../styles/_global.scss';
+
+form{
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 300px;
+  height: 450px;
+  background-color: $background-light-transparent;
+  border-radius: 15px;
+  box-shadow: 0 0 8px $background-button;
+  font-size: 1.1rem;
+  color: $background-button;
+  h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .input-group{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+    label {
+      font-weight: bold;
+      margin-bottom: 7px;
+      margin-left: 3px;
+    }
+
+    input {
+      border: none;
+      font-size: 1.1rem;
+      color: $background-button;
+      padding: 8px 3px;
+      border-radius: 5px;
+      &:focus-visible {
+        border: 1px solid $color-text-secundary;
+        outline: none;
+      }
+    }
+
+    p {
+      color: $advertency-red;
+      margin-top: 5px;
+      margin-left: 5px;
+      opacity: 0;
+
+      &.visible {
+        opacity: 1;
+      }
+    }
+  }
+
+  .btn__submit {
+    padding: 0.4em 1em;
+    font-size: 1.2rem;
+  }
+}

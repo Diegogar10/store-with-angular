@@ -1,0 +1,74 @@
+<form (ngSubmit)="registerUser()" #myForm="ngForm">
+  <h2>Crear Usuario</h2>
+  <!-- <div class="input-group">
+    <label for="name">Name</label>
+    <input type="text" required #nameReq="ngModel" placeholder="Diego Garcia" name="name" id="name" required [(ngModel)]="register.name"/>
+    <p [class.visible]="nameReq.invalid">Requiere un nombre!</p>
+  </div> -->
+  <div class="input-group">
+    <label for="name">Nombre y Apellido</label>
+    <input
+      type="text"
+      #nameReq="ngModel"
+      required
+      placeholder="Diego Garcia"
+      name="name"
+      id="name"
+      [(ngModel)]="register.name"
+    />
+    <p [class.visible]="nameReq.invalid">Requiere un nombre</p>
+  </div>
+  <div class="input-group">
+    <label for="email">Correo</label>
+    <input
+      type="email"
+      #emailReq="ngModel"
+      required
+      placeholder="example@email.com"
+      name="email"
+      id="email"
+      [(ngModel)]="register.email"
+      (change)="emailValidate()"
+    />
+    <p [class.visible]="emailReq.invalid" *ngIf="!emailValid">El correo es requerido!</p>
+    <p class="visible" *ngIf="emailValid">El correo ya esta registrado</p>
+  </div>
+  <div class="input-group">
+    <label for="password">Clave</label>
+    <input
+      type="password"
+      required
+      #passwordReq="ngModel"
+      placeholder="*******"
+      name="password"
+      id="password"
+      [(ngModel)]="register.password"
+      (change)="samePassword()"
+      />
+    <p [class.visible]="passwordReq.invalid">Requiere una contraseña!</p>
+  </div>
+  <div class="input-group">
+    <label for="password_confirm">Confirme su clave</label>
+    <input
+      type="password"
+      required
+      #passwordReq="ngModel"
+      placeholder="*******"
+      name="password_confirm"
+      id="password_confirm"
+      [(ngModel)]="password_confirm"
+      (change)="samePassword()"
+      />
+    <p *ngIf="passValid" class="visible">Las claves no coinciden!</p>
+  </div>
+  <div class="input-group">
+    <label for="role">Role</label>
+    <select name="select" [(ngModel)]="register.role" >
+      <option value="user" selected>Usuario</option>
+      <option value="admin">Administrador</option>
+    </select>
+  </div>
+  <p [class.visible]="error">{{error}}</p>
+  <button class="btn__submit" [disabled]="myForm.invalid || emailValid || passValid" type="submit">Registartse</button>
+  <!-- <button type="button">Acción</button> -->
+ </form>

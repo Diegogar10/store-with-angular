@@ -1,0 +1,17 @@
+<div class="cart-list">
+  <div class="cabecera">
+    <ul>
+      <li>Id</li>
+      <li>Product</li>
+      <li>Quantity</li>
+      <li>Unit Price</li>
+      <li>Total Price</li>
+    </ul>
+  </div>
+  <app-item-cart *ngFor="let product of productsList" [product]="product"></app-item-cart>
+  <div class="total">
+    <h3>Total</h3>
+    <p *ngIf="productsList.length; else elsecase">{{total | currency:'COP':'symbol-narrow':'1.1-1' }}</p>
+    <ng-template #elsecase><p>$0.0</p></ng-template>
+  </div>
+</div>

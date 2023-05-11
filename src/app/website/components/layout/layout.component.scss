@@ -1,0 +1,9 @@
+.container{
+  margin-top: 110px;
+}
+
+@media screen and (min-width: 40em) {
+  .container{
+    margin-top: 10px;
+  }
+}

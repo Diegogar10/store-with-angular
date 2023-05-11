@@ -1,0 +1,22 @@
+<form (ngSubmit)="login()" #myForm="ngForm">
+  <h2>Inicio de Sesión</h2>
+  <!-- <div class="input-group">
+    <label for="name">Name</label>
+    <input type="text" required #nameReq="ngModel" placeholder="Diego Garcia" name="name" id="name" required [(ngModel)]="register.name"/>
+    <p [class.visible]="nameReq.invalid">Requiere un nombre!</p>
+  </div> -->
+  <div class="input-group">
+    <label for="email">Email address</label>
+    <input type="email" required #emailReq="ngModel" placeholder="example@email.com" name="email" id="email" required [(ngModel)]="register.email"/>
+    <p [class.visible]="emailReq.invalid">El correo es requerido!</p>
+  </div>
+  <div class="input-group">
+    <label for="password">Password</label>
+    <input type="password" required #passwordReq="ngModel" placeholder="*******" name="password" id="password" required [(ngModel)]="register.password"/>
+    <p [class.visible]="passwordReq.invalid">Requiere una contraseña!</p>
+  </div>
+  <p [class.visible]="error">{{error}}</p>
+  <button class="btn__submit" [disabled]="myForm.invalid" type="submit">Validar</button>
+  <!-- <button type="button">Acción</button> -->
+  <a routerLink="/register">Registrarse</a>
+ </form>

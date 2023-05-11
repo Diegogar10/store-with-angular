@@ -1,0 +1,9 @@
+@import '../../../../styles/global';
+p, h2 {
+  margin: 0;
+}
+
+button{
+  @extend styleButton;
+  font-size: 1.1em;
+}
